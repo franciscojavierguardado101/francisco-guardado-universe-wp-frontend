@@ -20,7 +20,7 @@ export default function Footer() {
       <Box borderTop="1px" borderColor="border" />
       
       <Container as={Stack} maxW="6xl" py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} gap={8}>
           {/* Your footer content */}
         </SimpleGrid>
       </Container>
@@ -32,7 +32,7 @@ export default function Footer() {
         <Container maxW="6xl">
           <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center">
             <Text>© 2024 Your Company. All rights reserved</Text>
-            <Stack direction="row" spacing={6}>
+            <Stack direction="row" gap={6}>
               <ChakraLink href="#">
                 <Icon as={FaTwitter} />
               </ChakraLink>

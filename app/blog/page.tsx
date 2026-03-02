@@ -31,7 +31,7 @@ export default function BlogPage() {
 
   return (
     <Container maxW="7xl" py={12}>
-      <Stack spacing={8}>
+      <Stack gap={8}>
         <Box>
           <Heading as="h1" size="2xl" mb={4}>
             Blog
@@ -51,7 +51,7 @@ export default function BlogPage() {
                 transition="all 0.2s"
               >
                 <Card.Body>
-                  <Stack spacing={4}>
+                  <Stack gap={4}>
                     <Heading as="h2" size="lg">
                       {post.title}
                     </Heading>
