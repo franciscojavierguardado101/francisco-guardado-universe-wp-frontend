@@ -9,7 +9,7 @@ export default function BlogPost() {
 
   return (
     <Container maxW="4xl" py={12}>
-      <Stack spacing={6}>
+      <Stack gap={6}>
         <Heading as="h1" size="2xl">
           Blog Post: {slug}
         </Heading>
