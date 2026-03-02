@@ -46,8 +46,6 @@ export default function Navbar() {
             <Text
               fontSize="2xl"
               fontWeight="bold"
-              bgGradient="linear(to-r, blue.600, blue.400)"
-              bgClip="text"
               _hover={{ transform: 'scale(1.05)' }}
               transition="all 0.2s"
             >
@@ -58,25 +56,27 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <HStack gap={8} display={{ base: 'none', md: 'flex' }}>
             {navItems.map((item) => (
-              <Box
+              <Link
                 key={item.label}
-                as={Link}
                 href={item.href}
-                px={3}
-                py={2}
-                rounded="md"
-                fontSize="md"
-                fontWeight="500"
-                color="gray.700"
-                _hover={{
-                  textDecoration: 'none',
-                  bg: 'blue.50',
-                  color: 'blue.600',
-                }}
-                transition="all 0.2s"
+                style={{ textDecoration: 'none' }}
               >
-                {item.label}
-              </Box>
+                <Box
+                  px={3}
+                  py={2}
+                  rounded="md"
+                  fontSize="md"
+                  fontWeight="500"
+                  color="gray.700"
+                  _hover={{
+                    bg: 'blue.50',
+                    color: 'blue.600',
+                  }}
+                  transition="all 0.2s"
+                >
+                  {item.label}
+                </Box>
+              </Link>
             ))}
           </HStack>
 
@@ -116,26 +116,28 @@ export default function Navbar() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as="nav" gap={2}>
               {navItems.map((item) => (
-                <Box
+                <Link
                   key={item.label}
-                  as={Link}
                   href={item.href}
-                  px={3}
-                  py={2}
-                  rounded="md"
-                  fontSize="md"
-                  fontWeight="500"
-                  color="gray.700"
-                  display="block"
-                  _hover={{
-                    textDecoration: 'none',
-                    bg: 'blue.50',
-                    color: 'blue.600',
-                  }}
+                  style={{ textDecoration: 'none' }}
                   onClick={onClose}
                 >
-                  {item.label}
-                </Box>
+                  <Box
+                    px={3}
+                    py={2}
+                    rounded="md"
+                    fontSize="md"
+                    fontWeight="500"
+                    color="gray.700"
+                    display="block"
+                    _hover={{
+                      bg: 'blue.50',
+                      color: 'blue.600',
+                    }}
+                  >
+                    {item.label}
+                  </Box>
+                </Link>
               ))}
               <Link href="/contact">
                 <Button
