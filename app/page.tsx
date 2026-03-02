@@ -1,5 +1,4 @@
 'use client'
-
 import {
   Container, Stack, Flex, Box, Heading, Text, Button, SimpleGrid, Icon,
 } from '@chakra-ui/react'
@@ -7,13 +6,11 @@ import Link from 'next/link'
 import { FaRocket, FaCode, FaMobile } from 'react-icons/fa'
 import HomeCarousels from '@/components/HomeCarousels'
 import HomeSections from '@/components/HomeSections'
-
 const features = [
   { icon: FaRocket, title: 'Lightning Fast', description: 'Built with Next.js for optimal performance and SEO' },
   { icon: FaCode, title: 'Modern Stack', description: 'React, TypeScript, and Chakra UI for the best DX' },
   { icon: FaMobile, title: 'Fully Responsive', description: 'Beautiful on any device, from mobile to desktop' },
 ]
-
 export default function Home() {
   return (
     <>
@@ -29,8 +26,8 @@ export default function Home() {
               A modern headless WordPress setup with Next.js, GraphQL, and Chakra UI. Fast, flexible, and beautiful.
             </Text>
             <Stack gap={4} direction={{ base: 'column', sm: 'row' }}>
-              <Button as={Link} href="/blog" rounded="full" size="lg" fontWeight="bold" px={8} colorScheme="blue" _hover={{ transform: 'translateY(-2px)', shadow: 'lg' }} transition="all 0.2s">View Blog</Button>
-              <Button as={Link} href="/about" rounded="full" size="lg" fontWeight="bold" px={8} variant="outline" colorScheme="blue" _hover={{ bg: 'blue.50' }}>Learn More</Button>
+              <Link href="/blog"><Button rounded="full" size="lg" fontWeight="bold" px={8} colorScheme="blue" _hover={{ transform: 'translateY(-2px)', shadow: 'lg' }} transition="all 0.2s">View Blog</Button></Link>
+              <Link href="/about"><Button rounded="full" size="lg" fontWeight="bold" px={8} variant="outline" colorScheme="blue" _hover={{ bg: 'blue.50' }}>Learn More</Button></Link>
             </Stack>
           </Stack>
           <Flex flex={1} justify="center" align="center" position="relative" w="full">
@@ -40,10 +37,8 @@ export default function Home() {
           </Flex>
         </Stack>
       </Container>
-
       <HomeSections />
       <HomeCarousels />
-
       <Box bg="bg.muted" py={20}>
         <Container maxW="container.xl">
           <Stack gap={10}>

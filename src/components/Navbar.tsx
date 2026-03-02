@@ -11,7 +11,6 @@ import {
   Container,
   Text,
 } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 
 interface NavItem {
@@ -83,21 +82,21 @@ export default function Navbar() {
 
           {/* CTA Button (Desktop) */}
           <HStack gap={4} display={{ base: 'none', md: 'flex' }}>
-            <Button
-              as={Link}
-              href="/contact"
-              colorScheme="blue"
-              size="md"
-              rounded="full"
-              px={6}
-              _hover={{
-                transform: 'translateY(-2px)',
-                shadow: 'lg',
-              }}
-              transition="all 0.2s"
-            >
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button
+                colorScheme="blue"
+                size="md"
+                rounded="full"
+                px={6}
+                _hover={{
+                  transform: 'translateY(-2px)',
+                  shadow: 'lg',
+                }}
+                transition="all 0.2s"
+              >
+                Get Started
+              </Button>
+            </Link>
           </HStack>
 
           {/* Mobile menu button */}
@@ -108,7 +107,7 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
             variant="ghost"
           >
-            {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            {isOpen ? '✕' : '☰'}
           </IconButton>
         </Flex>
 
@@ -138,17 +137,17 @@ export default function Navbar() {
                   {item.label}
                 </Box>
               ))}
-              <Button
-                as={Link}
-                href="/contact"
-                colorScheme="blue"
-                size="md"
-                rounded="full"
-                w="full"
-                mt={2}
-              >
-                Get Started
-              </Button>
+              <Link href="/contact">
+                <Button
+                  colorScheme="blue"
+                  size="md"
+                  rounded="full"
+                  w="full"
+                  mt={2}
+                >
+                  Get Started
+                </Button>
+              </Link>
             </Stack>
           </Box>
         )}
